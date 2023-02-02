@@ -1,3 +1,3 @@
-# Jekyll
-
-Hello Jekyll
+---
+layout: home
+---
