@@ -1,7 +1,7 @@
 ---
 layout: page
-title: About
-permalink: /about/
+title: About-Sub-Two
+permalink: /about-2/
 ---
 
 About content goes here.
