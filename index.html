@@ -19,7 +19,7 @@ layout: default
   
   {% for file in site.static_files %}
     {% if file.extname == '.html' %}
-      <li><a href="{{ site.baseurl }}{{ file.url }}">{{ file.name }}</a></li>
+      <li><a href="{{ site.baseurl }}{{ file.url }}">{{ file.url }}</a></li>
     {% endif %}
   {% endfor %}
 
