@@ -2,9 +2,10 @@
 layout: default
 ---
 <ul>
-  {% for file in site.static_files %}
-    {% if file.extname == '.html' %}
-      <li><a href="{{ file.path. | absolute_url }}">{{ file.path }}</a></li>
-    {% endif %}
-  {% endfor %}  
+  {% for image in site.static_files %}
+  {% if image.path contains 'img/gallery' %}
+      <p>{{image.path}} - {{image.modified_time}}</p>
+      <img src="{{site.baseurl}}{{image.path}}">
+  {% endif %}
+  {% endfor %} 
 </ul>
