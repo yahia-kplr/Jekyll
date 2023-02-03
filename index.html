@@ -7,4 +7,19 @@ layout: default
       <li><a href="{{ file.path | absolute_url }}">{{ file.path }}</a></li>
     {% endif %}
   {% endfor %}
+  
+  {% for page in site.static_files %}
+  {% if page.extname == '.html' %}
+    {% if page.path contains '/' %}
+      {% assign subfolder = page.path | split: '/' | first %}
+      {% if subfolder != current_folder %}
+        {% assign current_folder = subfolder %}
+        </ul></li><li><strong>{{ subfolder }}</strong><ul>
+      {% endif %}
+    {% else %}
+      {% assign current_folder = '' %}
+    {% endif %}
+          <li><a href="{{ page.path | absolute_url }}">{{ page.path }}</a></li>
+   {% endif %}
+  {% endfor %}
 </ul>
