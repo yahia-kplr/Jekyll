@@ -17,10 +17,8 @@ layout: default
    {% endif %}
   {% endfor %}
   
-  {% for file in site.static_files %}
-    {% if file.extname == '.html' %}
-      <li><a href="{{ site.baseurl }}{{ file.url }}">{{ file.url }}</a></li>
-    {% endif %}
+  {% for file in site.html_pages %}
+     <li><a href="{{ site.baseurl }}{{ file.url }}">{{ file.url }}</a></li>    
   {% endfor %}
 
 </ul>
