@@ -3,8 +3,8 @@ layout: default
 ---
 <ul>
   {% for file in site.static_files %}
-  {% if file.extname == '.html' %}
-      <p>{{file.path}}</p>
+  {% if file.path contains '.html' %}
+      <p>{{file.name}}</p>
       <li><a href="{{ file.path | absolute_url }}">{{ file.path }}</a></li>
   {% endif %}
   {% endfor %} 
