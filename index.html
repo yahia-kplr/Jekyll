@@ -2,23 +2,9 @@
 layout: default
 ---
 <ul>
-  {% for post in site.posts %}
-    <li>
-      <a href="{{ post.url }}">{{ post.title }}</a>
-      <p>{{ post.excerpt }}</p>
-    </li>
+  {% for file in site.static_files %}
+    {% if file.extname == '.html' %}
+      <li><a href="{{ file.path | absolute_url }}">{{ file.path }}</a></li>
+    {% endif %}
   {% endfor %}
-  
-  {% for page in site.pages %}
-    {% if page.path contains 'pages' %}
-     <li>
-      <a href="{{ page.url }}">{{ page.title }}</a>
-    </li>
-   {% endif %}
-  {% endfor %}
-  
-  {% for file in site.html_pages %}
-     <li><a href="{{ site.baseurl }}{{ file.url }}">{{ file.url }}</a></li>    
-  {% endfor %}
-
 </ul>
